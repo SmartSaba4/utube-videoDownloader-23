@@ -1,15 +1,16 @@
-import time,sys
+
 from pytube import YouTube
 
 
-link=input("Link  : ")
+link=input("Paste Youtube Link  : ")
+
 print("\n")
 yt=YouTube(link)
 print(yt.title)
 print("\n")
 print(yt.thumbnail_url)
 print("\n")
-time.sleep(1)
+
 
 print("[1].All Formats")
 print("[2].Only Audio")
@@ -44,12 +45,9 @@ elif choices==1:
     
 elif choices==0:
     exit()
-else:
-    print("Wrong Choice...\n Exitting...")
-    time.sleep(3)
-    exit()
+
     
-if choices==3:
+elif choices==3:
     video=video.filter(only_video=True)
     vid=list(enumerate(video))
     for i in vid:
@@ -60,7 +58,7 @@ if choices==3:
     print("Succesfully Downloaded..... ") 
     
     
-if choices==4:
+elif choices==4:
     video=video.filter(progressive=True)
     vid=list(enumerate(video))
     for i in vid:
@@ -69,3 +67,8 @@ if choices==4:
     strm=int(input("Enter  : "))
     video[strm].download()
     print("Succesfully Downloaded..... ")     
+    
+else:
+    print("Wrong Choice...\n Exitting...")
+    
+    exit()
